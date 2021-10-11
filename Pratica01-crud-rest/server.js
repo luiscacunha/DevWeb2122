@@ -10,9 +10,10 @@ app.get("/", (req,res) => {  // Cria uma "rota" simples com o verbo GET do HTTP
     res.json({ mensagem: "Bem-vindo à primeira aplicação CRUD-REST"})
 });
 
+require("./rotas/cruderest.rotas")(app);
+
 const PORTA = process.env.PORT || 8080; // Estabelece a porta do servidor
 
 app.listen(PORTA, () => {
     console.log(`O servidor está a ouvir na porta ${PORTA}`);
 });
-
